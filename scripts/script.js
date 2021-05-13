@@ -15,17 +15,17 @@ document.addEventListener('DOMContentLoaded', () => {
         newPost.entry = entry;
         document.querySelector('main').appendChild(newPost);
         newPost.id = i;
-        newPost.addEventListener('click', ()=>{
-          let postState = {name: 'post', id: i};
-          history.pushState(postState, 'Entry', '#entry' + i);
-          setState(postState);
-
-        });
         i++;
+        newPost.addEventListener('click', ()=>{
+          let postState = {name: 'post', id: newPost.id};
+          history.pushState(postState, 'Entry', '#entry' + newPost.id);
+          setState(postState);
+          
+        });
         document.querySelector('main').appendChild(newPost);
       });
       document.querySelector('header img').addEventListener('click', ()=>{
-        let imgState = {name: "setting", id: -1};
+        let imgState = {name: "settings", id: -1};
         history.pushState(imgState, 'Setting', '#settings');
         setState(imgState);
       });
@@ -37,5 +37,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     });
-    
+      
 });
+
+window.addEventListener('popstate', (event)=>{
+  setState(event.state);
+})

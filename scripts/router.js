@@ -41,6 +41,11 @@ router.setState = function(state) {
     body.className = "";
     header.textContent = 'Journal Entries';
   }
+  else if(state.name == 'settings'){
+    body.className = 'settings';
+    header.textContent = 'Settings';
+  }
+  
   else if(state.name = "post"){
     body.className = "single-entry";
     header.textContent = "Entry " + state.id;
@@ -52,10 +57,8 @@ router.setState = function(state) {
     newPost.entry = journal.entry;
   } 
 
-  else if(state.name == 'setting'){
-    body.className = 'settings';
-    header.textContent = 'Settings';
-  }
+  
+  
   
   
 }
