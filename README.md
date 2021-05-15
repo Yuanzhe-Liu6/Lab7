@@ -1,4 +1,4 @@
-# Lab7_Solution
+# Lab7
 ## Author(s):
 - Yuyang Tian
 - Yuanzhe Liu
