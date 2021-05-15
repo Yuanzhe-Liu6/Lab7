@@ -46,7 +46,7 @@ router.setState = function(state) {
     header.textContent = 'Settings';
   }
   
-  else if(state.name = "post"){
+  else if(state.name == "post"){
     body.className = "single-entry";
     header.textContent = "Entry " + state.id;
     body.removeChild(body.children[2]);
